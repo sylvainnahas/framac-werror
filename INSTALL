@@ -1,0 +1,9 @@
+Building and installing plugins external to Frama-C is described in the user manual, chapter "Installing External Plug-ins". You can get the Frama-C user manual from here: http://frama-c.com/download/frama-c-user-manual.pdf
+
+In a nutshell:
+
+$ cd framac-werror
+$ make && make install
+$ frama-c -werror-help
+
+

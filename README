@@ -1,0 +1,16 @@
+* About *
+
+framac-werror is a plugin for the C source-code analysis Frama-C platform (www.frama-c.com). It changes the behaviour of this tool so that it returns a non-nul error code to the OS if there are proof obligations that could not be validated. 
+
+This plugin is intended to be used in automated settings like Makefiles, when users want confidence they can not overlook a validation error. Build processes may be very verbose and by default Frama-C returns an error code of 0 even if the code to be analysed contains run-time errors. The risk that a developer ignores a warning is real. Since the point of using tools like Frama-C is to garanty the abscence of errors altogether, a stricter behavior than the default may be sensible.
+
+When analysing incomplete applications (in Frama-C's talk) some proof obligations may have a "unknown" state, that is while analysing the code the tool does not have enough information to decide if these constraints are valid or invalid. The plugin offers command-line arguments that tell the plugin to not consider these proofs as erroneous. This is useful when checking libraries for example. 
+
+framac-werror is hosted on GitHub. This the place to go to get help, and fill bug and feature reports (which you are welcome to do).
+
+After having compiled and installed framac-werror (see the INSTALL file for that), executing
+$frama-c -werror-help
+should print-out the in-line help. 
+
+This plugin has been written by Sylvain Frédéric Nahas (sylvain DOT nahas AT googlemail DOT com) and is distributed under the LGPL.
+
