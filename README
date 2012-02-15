@@ -1,10 +1,10 @@
 * About *
 
-framac-werror is a plugin for the C source-code analysis Frama-C platform (www.frama-c.com). It changes the behaviour of this tool so that it returns a non-nul error code to the OS if there are proof obligations that could not be validated. 
+framac-werror is a plugin for the C source-code analysis Frama-C platform (www.frama-c.com). It changes the behavior of this tool so that it returns a non-null error code to the OS if there are proof obligations that could not be validated.
 
-It is intended to be used in automated settings like Makefiles, when users want confidence they can not overlook a validation error. Build processes may be very long and verbose and by default Frama-C returns an error code of 0 even if the code to be analysed contains run-time errors. The risk that a developer ignores a warning is real. Since the point of using tools like Frama-C is to garanty the abscence of errors altogether, a stricter behavior than the default may be sensible. With the -werror option, building will by interrupted as soon as a problem has been detected.
+It is intended to be used in automated settings like Makefiles, when users want confidence they can not overlook a validation error. Build processes may be very long and verbose and by default Frama-C returns an error code of 0 even if the code to be analyzed contains run-time errors. The risk that a developer ignores a warning is real. Since the point of using tools like Frama-C is to guaranty the absence of errors altogether, a stricter behavior than the default may be sensible. With the -werror option, building will by interrupted as soon as a problem has been detected.
 
-When analysing incomplete applications (in Frama-C's talk) some proof obligations may have a "unknown" state, that is while analysing the code the tool does not have enough information to decide if these constraints are valid or invalid. The plugin offers command-line arguments that tell the plugin to not consider these proofs as erroneous. This is useful when checking libraries for example. 
+When analyzing incomplete applications (in Frama-C's talk) some proof obligations may have a "unknown" state, that is while analyzing the code the tool does not have enough information to decide if these constraints are valid or invalid. The plugin offers command-line arguments that tell the plugin to not consider these proofs as erroneous. This is for example useful when checking libraries.
 
 * Where to find it *
 
